@@ -28,6 +28,7 @@ public:
 
 	//Assignment operators
 	IntArray &operator=(const IntArray &a);
+	void assign(const int *a, unsigned n);
 
 	//Subscript operators
 	int &operator[](unsigned pos);

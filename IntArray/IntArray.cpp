@@ -15,6 +15,15 @@ IntArray &IntArray::operator=(const IntArray &a)
 	return *this;
 }
 
+void IntArray::assign(const int *a, unsigned n)
+{
+	delete[] p;
+	p = new int[n];
+	size = n;
+	for (unsigned i = 0; i < n; i++)
+		p[i] = a[i];
+}
+
 //Resize array, initialize new elements to val
 void IntArray::resize(unsigned sz, int val)
 {
@@ -29,7 +38,7 @@ void IntArray::resize(unsigned sz, int val)
 	}
 	else {//Array is decreasing in size
 		for (i = 0; i < sz; i++)
-			temp[i] - p[i];
+			temp[i] = p[i];
 	}
 	delete[] p;
 	p = temp;
