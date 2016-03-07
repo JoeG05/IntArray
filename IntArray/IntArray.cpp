@@ -85,3 +85,23 @@ bool operator!=(const IntArray &a1, const IntArray &a2)
 {
 	return !(a1 == a2);
 }
+
+int &IntArray::begin()
+{
+	return *p;
+}
+
+int &IntArray::end()
+{
+	return p[size];
+}
+
+int IntArray::front()
+{
+	return p[0];
+}
+
+int IntArray::back()
+{
+	return p[size - 1];
+}

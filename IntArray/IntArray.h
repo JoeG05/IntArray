@@ -33,11 +33,22 @@ public:
 	//Subscript operators
 	int &operator[](unsigned pos);
 	const int &operator[](unsigned pos) const;	//const version
+	int &begin();
+	//const int begin(IntArray &a);
+	int &end();
+	//const end
+	int front();
+	//const front
+	int back();
+	//const back
+
 
 	//size functions
 	unsigned length() const { return size; }
 	bool empty() const { return size == 0; }
 	void resize(unsigned sz, int val = 0);
+
+	
 };
 
 // I/O functions

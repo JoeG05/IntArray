@@ -10,8 +10,16 @@ int main()
 	IntArray a;
 	a.assign(arr, 4);
 
-	cout << a << endl;
+	int *p = &a.begin();
+	int *q = &a.end();
+	
+	int r = a.front();
+	cout << r << endl;
 
+	int s = a.back();
+	cout << s << endl;
+
+	
 	
 	system("Pause");
 }
