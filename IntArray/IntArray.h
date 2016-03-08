@@ -33,14 +33,18 @@ public:
 	//Subscript operators
 	int &operator[](unsigned pos);
 	const int &operator[](unsigned pos) const;	//const version
+	
 	int &begin();
-	//const int begin(IntArray &a);
+	const int begin(IntArray &a);
+	
 	int &end();
-	//const end
+	const int end(IntArray &a);
+	
 	int front();
-	//const front
+	const int front(IntArray &a);
+	
 	int back();
-	//const back
+	const int back(IntArray &a);
 
 
 	//size functions

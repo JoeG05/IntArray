@@ -91,7 +91,17 @@ int &IntArray::begin()
 	return *p;
 }
 
+const int IntArray::begin(IntArray &a)
+{
+	return *p;
+}
+
 int &IntArray::end()
+{
+	return p[size];
+}
+
+const int IntArray::end(IntArray &a)
 {
 	return p[size];
 }
@@ -101,7 +111,17 @@ int IntArray::front()
 	return p[0];
 }
 
+const int IntArray::front(IntArray &a)
+{
+	return p[0];
+}
+
 int IntArray::back()
+{
+	return p[size - 1];
+}
+
+const int IntArray::back(IntArray &a)
 {
 	return p[size - 1];
 }
