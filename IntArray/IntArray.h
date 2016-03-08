@@ -46,6 +46,8 @@ public:
 	int back();
 	const int back(IntArray &a);
 
+	void swap(IntArray &a);
+
 
 	//size functions
 	unsigned length() const { return size; }

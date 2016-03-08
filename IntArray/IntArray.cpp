@@ -125,3 +125,35 @@ const int IntArray::back(IntArray &a)
 {
 	return p[size - 1];
 }
+
+void IntArray::swap(IntArray &a)
+{
+	int *temp1 = new int[size];
+	int *temp2 = new int[a.size];
+
+	unsigned sz1 = size;
+	unsigned sz2 = a.size;
+
+	for (unsigned i = 0; i < sz1; ++i)
+	{
+		temp1[i] = p[i];
+	}
+
+	for (unsigned i = 0; i < sz2; ++i)
+	{
+		temp2[i] = a.p[i];
+	}
+
+	size = sz2;
+	a.size = sz1;
+
+	for (unsigned i = 0; i < sz2; ++i)
+		p[i] = temp2[i];
+
+	for (unsigned i = 0; i < sz1; ++i)
+		a.p[i] = temp1[i];
+
+	delete[] temp1;
+	delete[] temp2;
+
+}

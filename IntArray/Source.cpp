@@ -10,14 +10,12 @@ int main()
 	IntArray a;
 	a.assign(arr, 4);
 
-	int *p = &a.begin();
-	int *q = &a.end();
-	
-	int r = a.front();
-	cout << r << endl;
+	int arr2[3] = { 5, 6, 7 };
+	IntArray b(arr2, 3);
 
-	int s = a.back();
-	cout << s << endl;
+
+	b.swap(a);
+	cout << b << endl << a << endl;
 
 	
 	
