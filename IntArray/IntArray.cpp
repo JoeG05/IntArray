@@ -234,7 +234,12 @@ void IntArray::swap(IntArray &a)
 		temp2[i] = a.p[i];
 	}
 
-	size = sz2;
+	delete[]p;
+	delete[] a.p;
+	a.p = temp1;
+	p = temp2;
+
+	/*size = sz2;
 	a.size = sz1;
 
 	for (unsigned i = 0; i < sz2; ++i)
@@ -245,7 +250,8 @@ void IntArray::swap(IntArray &a)
 
 	delete[] temp1;
 	delete[] temp2;
-
+*/
+	
 }
 
 void IntArray::insert(unsigned pos, int x)
