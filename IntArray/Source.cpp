@@ -10,7 +10,7 @@ int main()
 	IntArray a;
 	a.assign(arr, 4);
 
-	a.insert(2, 9);
+	a.insert(2, 5, 0);
 
 	cout << a << endl;
 

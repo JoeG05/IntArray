@@ -178,5 +178,18 @@ void IntArray::insert(unsigned pos, int x)
 
 void IntArray::insert(unsigned pos, unsigned n, int x)
 {
+	int *temp = new int[size + n];
+	unsigned i;
+	for (i = 0; i < pos; ++i)
+		temp[i] = p[i];
 
+	for (i = 0; i < n; ++i)
+		temp[pos + i] = x;
+
+	for (i = pos + n; i < size + n; ++i)
+		temp[i] = p[i - n];
+
+	delete[] p;
+	p = temp;
+	size = size + n;
 }
