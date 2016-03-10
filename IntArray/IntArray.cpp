@@ -193,3 +193,60 @@ void IntArray::insert(unsigned pos, unsigned n, int x)
 	p = temp;
 	size = size + n;
 }
+
+void IntArray::push_back(int x)
+{
+	int *temp = new int[size + 1];
+	for (unsigned i = 0; i < size; ++i)
+		temp[i] = p[i];
+
+	temp[size] = x;
+	delete[] p;
+	p = temp;
+	size = size + 1;
+
+}
+
+void IntArray::pop_back()
+{
+	int *temp = new int[size - 1];
+	for (unsigned i = 0; i < size - 1; ++i)
+		temp[i] = p[i];
+
+	delete[] p;
+	p = temp;
+	size = size - 1;
+}
+
+void IntArray::erase(unsigned pos)
+{
+	int *temp = new int[size - 1];
+	unsigned i;
+	for (i = 0; i < pos; ++i)
+		temp[i] = p[i];
+	
+	++i;
+	
+	for (; i < size; ++i)
+		temp[i - 1] = p[i];
+
+	delete[] p;
+	p = temp;
+	size = size - 1;
+}
+
+void IntArray::erase(unsigned first, unsigned last)
+{
+	int *temp = new int[size - (last - first)];
+	unsigned i;
+
+	for (i = 0; i < first; ++i)
+		temp[i] = p[i];
+
+	for (i = last; i < size; ++i)
+		temp[i - first] = p[i];
+		
+	delete[] p;
+	p = temp;
+	size = size - (last - first);
+}

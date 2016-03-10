@@ -51,6 +51,10 @@ public:
 	//Insert functions
 	void insert(unsigned pos, int x);	//insert x before 'pos'
 	void insert(unsigned pos, unsigned n, int x); // insert n x's before 'pos'
+	void push_back(int x);		//add x to end of array
+	void pop_back();			//remove last element of array
+	void erase(unsigned pos);	//remove element at 'pos'
+	void erase(unsigned first, unsigned last);	//remove elements [first, last)
 
 
 	//size functions

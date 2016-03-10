@@ -6,11 +6,11 @@ using namespace std;
 int main()
 {
 	
-	int arr[4] = { 1, 2, 3, 4 };
+	int arr[7] = { 1, 2, 3, 4, 5, 6, 7 };
 	IntArray a;
-	a.assign(arr, 4);
+	a.assign(arr, 7);
 
-	a.insert(2, 5, 0);
+	a.erase(2, 4);
 
 	cout << a << endl;
 
