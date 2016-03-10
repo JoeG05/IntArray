@@ -48,6 +48,10 @@ public:
 
 	void swap(IntArray &a);
 
+	//Insert functions
+	void insert(unsigned pos, int x);	//insert x before 'pos'
+	void insert(unsigned pos, unsigned n, int x); // insert n x's before 'pos'
+
 
 	//size functions
 	unsigned length() const { return size; }

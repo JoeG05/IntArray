@@ -10,12 +10,9 @@ int main()
 	IntArray a;
 	a.assign(arr, 4);
 
-	int arr2[3] = { 5, 6, 7 };
-	IntArray b(arr2, 3);
+	a.insert(2, 9);
 
-
-	b.swap(a);
-	cout << b << endl << a << endl;
+	cout << a << endl;
 
 	
 	

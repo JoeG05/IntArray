@@ -157,3 +157,26 @@ void IntArray::swap(IntArray &a)
 	delete[] temp2;
 
 }
+
+void IntArray::insert(unsigned pos, int x)
+{
+	int *temp = new int[size + 1];
+	unsigned i;
+
+	for (i = 0; i < pos; ++i)
+		temp[i] = p[i];
+
+	temp[pos] = x;
+
+	for (i = pos + 1; i < size + 1; ++i)
+		temp[i] = p[i - 1];
+
+	delete[] p;
+	p = temp;
+	size = size + 1;
+}
+
+void IntArray::insert(unsigned pos, unsigned n, int x)
+{
+
+}
