@@ -1,4 +1,6 @@
 #include <iomanip>
+#include <string>
+#include <sstream>
 #include "IntArray.h"
 using namespace std;
 
@@ -84,6 +86,94 @@ bool operator==(const IntArray &a1, const IntArray &a2)
 bool operator!=(const IntArray &a1, const IntArray &a2)
 {
 	return !(a1 == a2);
+}
+
+bool operator<(const IntArray &a1, const IntArray &a2)
+{
+	stringstream out1, out2;
+	string s1 = "";
+	string s2 = "";
+
+	for (unsigned i = 0; i < a1.length(); ++i)
+	{
+		out1 << a1[i];
+		s1 += out1.str();
+	}
+
+	for (unsigned i = 0; i < a2.length(); ++i)
+	{
+		out2 << a2[i];
+		s2 += out2.str();
+	}
+	if (s1 < s2)
+		return true;
+	return false;
+}
+
+bool operator<=(const IntArray &a1, const IntArray &a2)
+{
+	stringstream out1, out2;
+	string s1 = "";
+	string s2 = "";
+
+	for (unsigned i = 0; i < a1.length(); ++i)
+	{
+		out1 << a1[i];
+		s1 += out1.str();
+	}
+
+	for (unsigned i = 0; i < a2.length(); ++i)
+	{
+		out2 << a2[i];
+		s2 += out2.str();
+	}
+	if (s1 <= s2)
+		return true;
+	return false;
+}
+
+bool operator>(const IntArray &a1, const IntArray &a2)
+{
+	stringstream out1, out2;
+	string s1 = "";
+	string s2 = "";
+
+	for (unsigned i = 0; i < a1.length(); ++i)
+	{
+		out1 << a1[i];
+		s1 += out1.str();
+	}
+
+	for (unsigned i = 0; i < a2.length(); ++i)
+	{
+		out2 << a2[i];
+		s2 += out2.str();
+	}
+	if (s1 > s2)
+		return true;
+	return false;
+}
+
+bool operator>=(const IntArray &a1, const IntArray &a2)
+{
+	stringstream out1, out2;
+	string s1 = "";
+	string s2 = "";
+
+	for (unsigned i = 0; i < a1.length(); ++i)
+	{
+		out1 << a1[i];
+		s1 += out1.str();
+	}
+
+	for (unsigned i = 0; i < a2.length(); ++i)
+	{
+		out2 << a2[i];
+		s2 += out2.str();
+	}
+	if (s1 >= s2)
+		return true;
+	return false;
 }
 
 int &IntArray::begin()
@@ -249,4 +339,45 @@ void IntArray::erase(unsigned first, unsigned last)
 	delete[] p;
 	p = temp;
 	size = size - (last - first);
+}
+
+void IntArray::clear()
+{
+	int *temp = new int[0];
+	delete[] p;
+	p = temp;
+	size = 0;
+}
+
+void IntArray::add(IntArray &a1, IntArray &a2)
+{
+	
+	if (a1.length() != a2.length())
+		cout << "Not the same size" << endl;
+
+	else
+	{
+		for (unsigned i = 0; i < a1.length(); ++i)
+		{
+			p[i] = a1[i] + a2[i];
+		}
+	}
+
+	
+}
+
+void IntArray::multiply(IntArray &a1, IntArray &a2)
+{
+	
+	if (a1.length() != a2.length())
+		cout << "Not the same size" << endl;
+
+	else
+	{
+		for (unsigned i = 0; i < a1.length(); ++i)
+		{
+			p[i] = a1[i] * a2[i];
+		}
+	}
+	
 }

@@ -2,6 +2,8 @@
 #define __INTARRAY__
 
 #include <iostream>
+#include <string>
+#include <sstream>
 using namespace std;
 
 class Array_Error{
@@ -47,6 +49,8 @@ public:
 	const int back(IntArray &a);
 
 	void swap(IntArray &a);
+	void add(IntArray &a1, IntArray &a2);
+	void multiply(IntArray &a1, IntArray &a2);
 
 	//Insert functions
 	void insert(unsigned pos, int x);	//insert x before 'pos'
@@ -55,12 +59,15 @@ public:
 	void pop_back();			//remove last element of array
 	void erase(unsigned pos);	//remove element at 'pos'
 	void erase(unsigned first, unsigned last);	//remove elements [first, last)
+	void clear();				//remove all elements
 
 
 	//size functions
 	unsigned length() const { return size; }
 	bool empty() const { return size == 0; }
 	void resize(unsigned sz, int val = 0);
+
+	
 
 	
 };
@@ -72,6 +79,10 @@ istream& operator>>(istream& in, IntArray &a);
 // Relational Operators
 bool operator==(const IntArray &a1, const IntArray &a2);
 bool operator!=(const IntArray &a1, const IntArray &a2);
+bool operator<(const IntArray &a1, const IntArray &a2);
+bool operator<=(const IntArray &a1, const IntArray &a2);
+bool operator>(const IntArray &a1, const IntArray &a2);
+bool operator>=(const IntArray &a1, const IntArray &a2);
 
 //Relational Operators
 
